@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
+  <title>Summit Exports Ltd | Global Trade Experts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .gradient-text {
+      background: linear-gradient(45deg, #f63b3b, #d81d1d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+   
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transition: all 0.3s ease;
+    }
+    
+    .header-container {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+    
+    .nav-button {
+      position: relative;
+      user-select: none;
+      -webkit-user-drag: none;
+      white-space: nowrap;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      color: white;
+    }
+    
+    .btn-primary {
+      background-color: transparent;
+      color: white;
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: white;
+    }
+    
+    .btn-transparent {
+      background-color: transparent;
+      color: white;
+    }
+    
+    
+    .header-scrolled {
+      background-color: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .header-scrolled .nav-logo {
+      color: #eb2c25;
+    }
+    
+    .header-scrolled .nav-link {
+      color: #1f2937;
+    }
+    
+    .header-scrolled .nav-link:hover {
+      color: #eb2c25;
+    }
+    
+    .header-scrolled .btn-transparent,
+    .header-scrolled .btn-outline {
+      border-color: #d1d5db;
+      color: #4b5563;
+    }
+    
+    .header-scrolled .btn-primary {
+      background-color: #eb2525;
+      border-color: #eb2525;
+      color: white;
+    }
+    
+    .header-scrolled .btn-outline:hover,
+    .header-scrolled .btn-transparent:hover {
+      background-color: #f3f4f6;
+    }
+    
+    /* 텍스트 줄바꿈 기본 스타일 */
+    .break-words {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+    }
+    
+    @media (max-width: 1024px) {
+      .header-container {
+        padding: 1rem;
+      }
+      
+      
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s ease;
+      }
+      
+      .header-scrolled .mobile-menu-btn {
+        background-color: rgba(235, 37, 37, 0.1);
+      }
+      
+     
+      .mobile-h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        line-height: 1.3 !important;
+      }
+      
+      .mobile-h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem) !important;
+        line-height: 1.4 !important;
+      }
+      
+      .mobile-h3 {
+        font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+        line-height: 1.4 !important;
+      }
+      
+      .mobile-text-base {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+      }
+      
+      
+      .mobile-py {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      
+      .mobile-my {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      .mobile-px {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      
+      .mobile-grid-1 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .mobile-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      
+      
+      .mobile-flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      
+      .mobile-touch-target {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      
+      
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    }
+    
+    
+    @media (max-width: 768px) {
+      
+      #mobile-menu {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        max-height: 90vh;
+        overflow-y: auto;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .mobile-menu-link {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        margin: 4px 0;
+        border-radius: 8px;
+        font-weight: 500;
+        color: #374151;
+        transition: all 0.2s ease;
+      }
+      
+      .mobile-menu-link:active {
+        background-color: #f3f4f6;
+        transform: scale(0.98);
+      }
+      
+      .mobile-menu-link svg {
+        margin-right: 12px;
+        color: #eb2525;
+      }
+      
+      
+      .mobile-card {
+        background-color: transparent;
+        border-radius: 16px;
+        padding: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+        width: calc(100% - 1rem);
+      }
+      
+      .mobile-card-body {
+        flex: 1;
+      }
+      
+      
+      .mobile-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        min-height: 44px;
+      }
+      
+      .mobile-btn:active {
+        transform: translateY(1px);
+      }
+      
+      
+      .mobile-gap-sm {
+        gap: 0.5rem !important;
+      }
+      
+      .mobile-gap-md {
+        gap: 1rem !important;
+      }
+      
+      .mobile-gap-lg {
+        gap: 1.5rem !important;
+      }
+      
+      
+      .mobile-img {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      
+      
+      .mobile-text-center {
+        text-align: center !important;
+      }
+      
+      .mobile-text-left {
+        text-align: left !important;
+      }
+      
+      
+      .mobile-icon-md {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      
+      .mobile-icon-lg {
+        width: 32px !important;
+        height: 32px !important;
+      }
+      
+      /* 컨테이너 패딩 조정 */
+      .container.mx-auto {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      }
+      
+      /* 섹션 패딩 조정 */
+      section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      
+      /* 카드 내 패딩 조정 */
+      .bg-gray-800.p-8 {
+        padding: 1.25rem !important;
+      }
+      
+      /* 모바일 텍스트 최적화 */
+      .break-words {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-break: break-word;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+      }
+      
+    
+      #hero {
+        padding-top: 7rem !important;
+      }
+      
+     
+      #hero .container {
+        padding-top: 2rem !important;
+      }
+      
+      /* 햄버거 버튼 색상 조정 */
+      .mobile-menu-btn svg {
+        stroke: white !important;
+      }
+      
+      /* 헤더 스크롤 시 햄버거 버튼 색상 변경 */
+      .header-scrolled .mobile-menu-btn svg {
+        stroke: #c51e1e !important;
+      }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Config Variables -->
+  <script>
+    // Company Profile Configuration - Edit this to update the profile URL site-wide
+    const COMPANY_PROFILE_PATH = "./download/Summit_Exports_LTD_Introduction_ENG.pdf";
+    
+    // 페이지 로드 후 실행
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const header = document.querySelector('.header');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+          document.body.classList.toggle('overflow-hidden'); // 모바일 메뉴 열릴 때 스크롤 방지
+        });
+        
+        // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          });
+        });
+      }
+      
+      // 스크롤 이벤트 감지
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      });
+      
+      // 쿼리 파라미터 thanks=true일 경우 감사 메시지 표시
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('thanks') === 'true') {
+        const thanksMessage = document.getElementById('thanksMessage');
+        if (thanksMessage) {
+          thanksMessage.classList.remove('hidden');
+          setTimeout(() => {
+            thanksMessage.classList.add('opacity-0');
+            setTimeout(() => {
+              thanksMessage.classList.add('hidden');
+            }, 500);
+          }, 5000);
+        }
+      }
+    });
+  </script>
+</head>
+<body class="font-sans antialiased bg-gray-50">
+  <div class="overflow-x-hidden w-full">
+   
+  <header class="header">
+      <div class="container mx-auto header-container">
+        
+        <a href="#" class="text-xl font-bold text-white nav-logo flex items-center">
+          <span>ADCODE MARKETING</span>
+        </a>
+        
+        <!-- 데스크탑 메뉴 -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <nav class="flex space-x-6">
+            <a href="#why-landit" class="nav-link text-white hover:text-blue-200 transition-colors">애드코드</a>
+            <a href="#curriculum" class="nav-link text-white hover:text-blue-200 transition-colors">바이럴마케팅</a>
+            <a href="#professors" class="nav-link text-white hover:text-blue-200 transition-colors">가게 (매장) 마케팅</a>
+            <a href="#oncare" class="nav-link text-white hover:text-blue-200 transition-colors">퍼포먼스 마케팅</a>
+            <a href="#benefits" class="nav-link text-white hover:text-blue-200 transition-colors">디자인 제작</a>
+            
+          </nav>          
+          
+        </div>
+        
+        <!-- 모바일 메뉴 버튼 -->
+        <button class="lg:hidden text-white focus:outline-none mobile-menu-btn" id="mobile-menu-button">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- 모바일 메뉴 -->
+      <div class="hidden lg:hidden bg-white/95 absolute left-0 right-0 p-4 shadow-lg z-50" id="mobile-menu">
+        <div class="flex flex-col space-y-2 p-2">
+          <a href="#why-landit" class="mobile-menu-link">
+            <svg class="w-5 h-5 mobile-icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            애드코드
+          </a>
+          <a href="#curriculum" class="mobile-menu-link">
+            <svg class="w-5 h-5 mobile-icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+            </svg>
+            바이럴마케팅
+          </a>
+          <a href="#professors" class="mobile-menu-link">
+            <svg class="w-5 h-5 mobile-icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+            가게 (매장) 마케팅
+          </a>
+          <a href="#oncare" class="mobile-menu-link">
+            <svg class="w-5 h-5 mobile-icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            퍼포먼스 마케팅
+          </a>
+          <a href="#benefits" class="mobile-menu-link">
+            <svg class="w-5 h-5 mobile-icon-md" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a4 4 0 118 0v7M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+            </svg>
+            디자인 제작
+          </a>
+
+   
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-24 md:pt-32">
+      <div class="absolute inset-0 z-0">
+        <img src="img/main.png" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,70%)] to-[rgba(0,0,0,60%)]"></div>
+      </div>
+      
+      <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full text-center relative z-10">
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-6 mobile-h1" style="line-height: 1.5;">
+          <span class="md:text-6xl text-red-600">ADCODE MARKETING</span><br>
+          <span class="md:text-3xl text-white">우리는 광고하지 않습니다. 약속합니다.</span><br>
+          <span class="md:text-3xl text-white">당신의 목표에 맞춰 설계하고, 끝까지 책임지는 마케팅을 합니다.</span>
+        </h1>
+        <p class="text-xl text-white/90 max-w-3xl mx-auto mb-10 mobile-text-base">
+          감각적 전략과 강력한 실행력으로 국내 소비자 입소문의 중심에 서게 만듭니다
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center sm:space-x-4 space-y-4 sm:space-y-0 mt-12">
+          <a href="#registration" class="bg-red-600 text-white font-bold px-8 py-4 rounded-full hover:bg-red-400 transition-all mobile-btn">
+            문의하기
+          </a>
+      </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 sm:mt-20 px-2 sm:px-0">
+          <div class="glass-effect rounded-xl p-4 sm:p-6 hover-scale">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4">
+              <svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2 text-lg sm:text-xl">바이럴마케팅</h3>
+            <p class="text-white/80 text-sm">온라인 커뮤니티와 SNS를 통한 자연스러운 입소문 확산 전략</p>
+          </div>
+          <div class="glass-effect rounded-xl p-4 sm:p-6 hover-scale">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4">
+              <svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2 text-lg sm:text-xl">가게 (매장) 마케팅</h3>
+            <p class="text-white/80 text-sm">오프라인 매장 방문율과 매출을 높이는 맞춤형 마케팅</p>
+          </div>
+          <div class="glass-effect rounded-xl p-4 sm:p-6 hover-scale">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4">
+              <svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2 text-lg sm:text-xl">퍼포먼스 마케팅</h3>
+            <p class="text-white/80 text-sm">클릭, 구매, 전환을 최적화하는 성과 중심 광고 캠페인</p>
+          </div>
+          <div class="glass-effect rounded-xl p-4 sm:p-6 hover-scale">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4">
+              <svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2 text-lg sm:text-xl">디자인 제작</h3>
+            <p class="text-white/80 text-sm">브랜드 이미지를 강화하는 고품질 디자인 제작 서비스</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute inset-0 opacity-20 overflow-hidden">
+        <div class="w-64 h-64 bg-white/10 rounded-full absolute top-20 left-10"></div>
+        <div class="w-48 h-48 bg-yellow-400/20 rounded-full absolute bottom-20 right-10"></div>
+        <div class="w-32 h-32 bg-blue-400/20 rounded-full absolute top-1/2 left-1/3"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="min-h-[70vh] py-20 bg-white">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="relative mx-auto max-w-lg lg:max-w-none">
+          <img src="img/meeting.png" alt="Hong Kong" class="rounded-2xl shadow-2xl hover-scale w-full">
+          <div class="absolute -bottom-8 -right-8 bg-red-600 p-4 sm:p-6 rounded-2xl shadow-lg w-48 sm:w-64">
+            <h3 class="text-white font-bold mb-2">약속-책임</h3>
+            <p class="text-sm text-white">"끝까지 책임지는 마케팅 실행력"</p>        
+
+          </div>
+        </div>
+        <div class="mt-16 lg:mt-0">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-6">브랜드 확산 파트너, <span class="text-red-600">애드코드마케팅</span></h2>
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed mb-8">
+           애드코드마케팅은 국내 시장에서 수많은 브랜드의 마케팅을 실제로 운영하며, <br>바이럴, SNS, 검색광고, 리뷰관리 등 통합 솔루션을 제공하는 실전형 마케팅 전문 기업입니다.<br>
+           우리는 광고보다 약속을, 성과보다 지속가능한 성장을 추구합니다.
+          </p>
+          
+            
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold">4+ Years</h3>
+                <p class="text-sm text-gray-500">실전 경험 실무 중심, 4년 이상 마케팅 현장 노하우</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold">100% Client Trust</h3>
+                <p class="text-sm text-gray-500">고객 신뢰도 반복 의뢰율 높은 장기 파트너십 유지</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold">1,000+ Projects</h3>
+                <p class="text-sm text-gray-500">프로젝트 누적 건수 수천 건의 실제 마케팅 운영 사례</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold">다양한 분야 대응</h3>
+                <p class="text-sm text-gray-500 max-w-xs">업종별 특화 전략 식품, 프랜차이즈, 연예, K-POP 등 민감 산업까지 빠르고 정밀하게 대응</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-xl border-2 border-red-600">
+            <h3 class="text-red-600 font-semibold mb-2 text-xl">Vision</h3>
+            <p class="text-gray-700">애드코드마케팅은 단순한 대행이 아닌, 브랜드의 성장 여정을 끝까지 함께하는 파트너입니다.</p>
+            <p class="text-gray-700">브랜드가 시장에 정착하고 신뢰받을 때까지 ㅡ 우리는 모든 과정에 진심을 담아 실행합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- 온라인 커뮤니티 및 포털 기반 바이럴 마케팅 Section -->
+  <section id="why-landit" class="min-h-[70vh] py-20 bg-[#1a0000]">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">온라인 커뮤니티 및 포털 기반 바이럴 마케팅</h2>
+        <p class="text-white max-w-2xl mx-auto">ADCODEMARKETING은 다양한 온라인 커뮤니티와 포털 네이버, 다음 등의 카페를 활용하여 브랜드 인지도와 신뢰도를 높이는 맞춤형 바이럴 마케팅 전략을 제공합니다.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-[#2a0505] rounded-xl shadow-lg p-8 hover-scale transition-all">
+          <div class="w-16 h-16 bg-[#3a0808] rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-white">커뮤니티 바이럴</h3>
+          <p class="text-gray-300 mb-6">브랜드 제품 홍보와 매출 향상을 위한 핫딜 이벤트부터, 영화, K-POP, 드라마, 연예인, 정치 등 민감 콘텐츠까지 맞춤형 바이럴을 진행합니다.</p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>온라인 커뮤니티, 네이버/다음 카페, 당근마켓 등</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>더쿠, 뽐뿌, 루리웹, 맘카페 등 주요 커뮤니티 특성 맞춤형</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>후기 콘텐츠로 이어지는 체계적 브랜드 인지도 구축</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-[#2a0505] rounded-xl shadow-lg p-8 hover-scale transition-all">
+          <div class="w-16 h-16 bg-[#3a0808] rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-white">SNS 바이럴</h3>
+          <p class="text-gray-300 mb-6">인스타그램 일반 피드 게시물을 중심으로 브랜드 특성에 맞는 콘텐츠를 기획하고 운영합니다.</p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>인스타그램, 틱톡, 유튜브 등</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>릴스(숏폼), 틱톡, 유튜브 쇼츠 병행 지원</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>실제 팔로워 기반 인플루언서 활용 광고</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-[#2a0505] rounded-xl shadow-lg p-8 hover-scale transition-all">
+          <div class="w-16 h-16 bg-[#3a0808] rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-white">브랜드 통합 체험단 운영</h3>
+          <p class="text-gray-300 mb-6">블로그, 인스타그램, 네이버/다음 카페를 연계한 브랜드 통합 체험단을 운영하여 실사용 후기 콘텐츠를 대량 확보합니다.</p>
+          <ul class="space-y-2 text-gray-300">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>블로그, 인스타그램, 네이버/다음 카페 등</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>제품 사용 후기, 비교 후기 등 사용자 중심 콘텐츠</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>장기적 마케팅 효과를 위한 브랜드 인지도 구축형 체험단</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition-all">
+          바이럴 문의하기
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- 가게 (매장) 마케팅 섹션 - 개선된 버전 -->
+<section id="local-marketing" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+    <!-- 헤더 섹션 - 정돈된 디자인 -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">가게와 매장의 성공을 위한 <span class="text-red-600">통합 마케팅 서비스</span></h2>
+      
+      <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        블로그·인스타그램 체험단 운영부터 지역 맘카페 홍보, 당근마켓 홍보, SNS 파워채널, <br>네이버 플레이스 최적화까지 — 매장 마케팅을 통합 관리합니다
+      </p>
+    </div>
+
+    <!-- 주요 서비스 카드 - 일관된 높이와 정렬 -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-14">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-red-50 rounded-lg p-6 transition-transform hover:transform hover:scale-105">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-800">블로그·인스타 체험단 운영</h3>
+          </div>
+          <p class="text-sm text-gray-600">후기 중심, SNS + 검색을 동시에 노리는 체험단 운영 솔루션</p>
+        </div>
+        
+        <div class="bg-blue-50 rounded-lg p-6 transition-transform hover:transform hover:scale-105">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-800">지역 맘카페 홍보</h3>
+          </div>
+          <p class="text-sm text-gray-600">맘카페 특성에 맞춘 자연스러운 정보성 후기 확산 전략</p>
+        </div>
+        
+        <div class="bg-orange-50 rounded-lg p-6 transition-transform hover:transform hover:scale-105">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-800">당근마켓 바이럴 운영</h3>
+          </div>
+          <p class="text-sm text-gray-600">동네 생활 기반 스토리텔링으로 신뢰도 상승 및 방문 유도</p>
+        </div>
+        
+        <div class="bg-green-50 rounded-lg p-6 transition-transform hover:transform hover:scale-105">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-3">
+              <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-800">SNS 파워채널 홍보</h3>
+          </div>
+          <p class="text-sm text-gray-600">고팔로워 인스타그램, 블로그 채널을 통한 강력한 노출 및 신뢰 구축</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지역 마케팅 효과 섹션 - 더 나은 콘텐츠 배열 -->
+    <div class="grid md:grid-cols-2 gap-10 mb-14">
+      <div class="flex flex-col justify-center">
+        <div class="mb-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">지역 마케팅 효과</h3>
+          <div class="w-48 h-1 bg-red-500 mb-4"></div>
+          <p class="text-gray-600 leading-relaxed">지역 기반 마케팅으로 매장 인지도, 검색 노출, 고객 유입을 동시에 극대화 합니다.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow-md">
+          <h4 class="font-bold text-gray-800 mb-4 flex items-center">
+            <svg class="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            지역 밀착형 마케팅으로 매장 성장을 완성합니다.
+          </h4>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>매장 노출 및 고객 유입 강화</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>지역 기반 매장 인지도 상승</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>지역 내 브랜드 영향력 확대</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="flex items-center justify-center">
+        <div class="relative w-full overflow-hidden rounded-xl shadow-xl">
+          <img src="img/project.png" alt="지역 마케팅" class="w-full h-[300px] object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-6">
+            <span class="text-white font-semibold">지역 마케팅 성과</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-green-50 rounded-xl shadow-md overflow-hidden transform transition-transform hover:shadow-lg">
+        
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <svg class="w-6 h-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <h3 class="font-bold text-gray-800">맘카페 바이럴 마케팅</h3>
+          </div>
+          <p class="text-gray-600 mb-4">지역 맘카페 바이럴마케팅<br>신뢰도 높은 지역 맘카페를 통한 자연스러운 입소문확산</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>매장에 적합한 맘카페 타켓팅 진행</span>
+            </li>
+            <li class="flex items-start">
+                  <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>후기형·정보형 콘텐츠를 통한 자연스러운 노출</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>매달 꾸준한 커뮤니티 관리 및 자연 바이럴 확산 운영</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="bg-orange-50 rounded-xl shadow-md overflow-hidden transform transition-transform hover:shadow-lg">
+        
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <svg class="w-6 h-6 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+            <h3 class="font-bold text-gray-800">당근 홍보</h3>
+          </div>
+          <p class="text-gray-600 mb-4">당근마켓 생활밀착형 마케팅<br>생활형 추천 콘텐츠를 통한 동네 기반 매장 홍보</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>생활형 추천글 및 후기 콘텐츠 제작</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>광고 티 없는 자연스러운 지역 홍보</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>동네 신뢰도 확보 및 매장 방문 유도</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="bg-blue-50 rounded-xl shadow-md overflow-hidden transform transition-transform hover:shadow-lg">
+        
+        <div class="p-6">
+          <div class="flex items-center mb-3">
+            <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <h3 class="font-bold text-gray-800">인스타 파워채널 홍보</h3>
+          </div>
+          <p class="text-gray-600 mb-4">지역 인스타그램 파워채널 홍보<br>지역 타겟 인플루언서를 통한 매장 인지도 확산</p>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>지역 팔로워 중심 인스타 파워채널 활용</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>릴스·포스트·스토리 등 다양한 콘텐츠 운영</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-red-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>브랜드 신뢰도 상승 및 신규 고객 유입 강화</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA 버튼 - 개선된 디자인 -->
+    <div class="flex justify-center mt-14">
+      <a href="#contact" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-xl">        
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+        가게 (매장) 마케팅 문의하기
+      </a>
+    </div>
+  </div>
+</section>
+
+ 
+
+  <section id="kbrand" class="min-h-screen py-20 bg-red-50">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Performance Marketing Partner</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">성과를 만드는 광고 파트너</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+          <div class="absolute inset-0 bg-red-600 rounded-3xl rotate-6"></div>
+          <div class="relative bg-white rounded-3xl p-8 shadow-xl">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center">
+                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">퍼포먼스 광고 전략</h3>
+            </div>
+            <p class="text-gray-700 mb-6">퍼포먼스 광고는 단순히 광고를 노출하는 것이 아니라, 정확한 목표 설정과 데이터 분석을 통해 광고 효과를 극대화하는 전략입니다.</p>
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700">고객이 원하는 정보를 찾을 때 자연스럽게 브랜드를 노출시킵니다.</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700">다양한 채널(네이버, 구글, 틱톡, 카카오 등)을 통해 최적의 타이밍에 도달합니다.</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700">광고를 기획하는 순간부터 집행, 모니터링, 최적화까지 모든 과정을 체계적으로 관리합니다.</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700">광고비 대비 최대의 결과를 만들어냅니다.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="p-6 bg-white rounded-xl shadow-lg hover-scale">
+            <h3 class="text-lg font-semibold mb-2">SA(Search Advertising) 광고</h3>
+            <p class="text-gray-600">네이버, 구글 같은 곳에서 검색했을 때 상단에 노출되는 광고입니다. 필요한 사람에게 바로 보여, 구매 가능성이 높은 강력한 광고 방법입니다.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow-lg hover-scale">
+            <h3 class="text-lg font-semibold mb-2">DA(Display Advertising) 광고</h3>
+            <p class="text-gray-600">뉴스나 블로그를 보는 중간에 자연스럽게 나타나는 배너, 이미지, 영상 광고입니다. 브랜드를 모르는 사람들에게도 관심을 유도할 수 있습니다.</p>
+          </div>
+          <div class="p-6 bg-white rounded-xl shadow-lg hover-scale">
+            <h3 class="text-lg font-semibold mb-2">통합 채널 운영</h3>
+            <p class="text-gray-600">네이버, 구글, 틱톡, 카카오 등 다양한 채널을 통합으로 운영하여 광고 효율을 극대화합니다. 플랫폼별 특성에 맞게 전략을 달리해 최적의 퍼포먼스를 만들어냅니다.</p>
+          </div>
+          <div class="p-6 bg-gradient-to-r from-red-500 to-red-600 rounded-xl text-white shadow-lg hover-scale">
+            <h3 class="text-lg font-semibold mb-2">실시간 성과 분석</h3>
+            <p class="text-white/80">광고 성과는 매일 모니터링하고, 클릭 수, 전환율, 매출 데이터를 기반으로 빠르게 개선합니다. 광고비를 효율적으로 사용해 최고의 결과를 만듭니다.</p>
+            <a href="#contact" class="inline-block mt-4 text-white underline">문의하기 →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-20 bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid md:grid-cols-3">
+          <div class="p-8 bg-gradient-to-br from-red-600 to-red-800 text-white">
+            <h3 class="text-xl font-bold mb-4">통합 퍼포먼스 마케팅</h3>
+            <p class="mb-6">시장 분석을 통한 전략 수립, 채널별 맞춤 광고 세팅, 실시간 성과 분석과 리포트를 기반으로 최적화 작업까지, 퍼포먼스 광고 전 과정이 하나의 흐름으로 자연스럽게 연결됩니다.</p>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm sm:text-base break-words">효율적인 예산 운영</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm sm:text-base break-words">높은 광고 성과</span>
+              </div>
+              <div class="flex items-start">
+                <svg class="w-5 h-5 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="text-sm sm:text-base break-words">광고비 낭비 최소화</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-8 col-span-2">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">퍼포먼스 마케팅 진행 단계</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">1</span>
+                </div>
+                <p class="text-sm text-gray-600">목표 설정<br>(매출/노출/브랜드 인지도)</p>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">2</span>
+                </div>
+                <p class="text-sm text-gray-600">전략 수립<br>(채널·타겟·예산 계획)</p>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">3</span>
+                </div>
+                <p class="text-sm text-gray-600">캠페인 세팅<br>(광고 제작/운영 세팅)</p>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">4</span>
+                </div>
+                <p class="text-sm text-gray-600">광고 집행<br>(운영 및 실시간 관리)</p>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">5</span>
+                </div>
+                <p class="text-sm text-gray-600">성과 분석<br>(광고 리포트 제공)</p>
+              </div>
+              <div class="bg-gray-100 rounded-lg p-4 text-center">
+                <div class="w-12 h-12 bg-red-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                  <span class="text-red-600 font-bold">6</span>
+                </div>
+                <p class="text-sm text-gray-600">최적화 개선<br>(성과 기반 수정 작업)</p>
+              </div>
+            </div>
+            <div class="mt-6 text-center">
+              <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition-colors">
+                퍼포먼스 마케팅 문의하기
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- K-goods Export Section -->
+  <section id="kgoods" class="min-h-screen py-20 bg-white">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">브랜드를 성장시키는 디자인</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">광고성과를 높이는 모든 디자인 작업을 한번에 지원합니다.</p>
+      </div>
+      
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div class="order-2 lg:order-1">
+          <div class="space-y-8">
+            <div class="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl hover-scale">
+              <h3 class="text-xl font-bold text-red-800 mb-4">디자인 기획 및 제작</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  브랜드에 맞는 상세페이지 디자인 기획 및 제작
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  판매를 돕는 스토어 페이지 구성 및 제작
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  프로모션에 최적화된 배너 디자인 수정 및 적용
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  채널별 최적화된 카드뉴스 제작
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  판매 증진을 위한 비주얼 전략 제안
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl hover-scale">
+              <h3 class="text-xl font-bold text-red-800 mb-4">콘텐츠 디자인 고도화</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  제품/서비스에 최적화된 디자인 로컬라이징
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  마케팅을 고려한 스토리형 디자인 기획
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  브랜드 이미지 강화 및 패키징 디자인 개선
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  시장 트렌드 반영한 숏폼 영상(릴스, 숏클립 등) 제작
+                </li>
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-red-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  지속 가능한 콘텐츠 업데이트 및 품질 관리
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <img src="img/project.png" alt="디자인 서비스" class="rounded-2xl shadow-2xl hover-scale">
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-3xl p-10 shadow-lg">
+        <div class="text-center mb-10">
+          <h3 class="text-2xl font-bold text-gray-800">디자인 작업 프로세스</h3>
+          <div class="flex items-center justify-center space-x-2 mt-3">
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+              <span class="text-red-600 font-bold">기획</span>
+            </div>
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path>
+            </svg>
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+              <span class="text-blue-600 font-bold">제작</span>
+            </div>
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path>
+            </svg>
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <span class="text-green-600 font-bold">완성</span>
+            </div>
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path>
+            </svg>
+            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+              <span class="text-purple-600 font-bold">배포</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <span class="text-red-600 font-bold">1</span>
+            </div>
+            <h4 class="font-bold mb-2">니즈 분석 및 스타일 가이드 설정</h4>
+            <p class="text-gray-600 text-sm">고객 요구사항과 브랜드 톤 분석</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <span class="text-red-600 font-bold">2</span>
+            </div>
+            <h4 class="font-bold mb-2">디자인 기획 및 콘텐츠 설계</h4>
+            <p class="text-gray-600 text-sm">상세페이지, 배너, 카드뉴스 구성 기획</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <span class="text-red-600 font-bold">3</span>
+            </div>
+            <h4 class="font-bold mb-2">콘텐츠 제작 및 피드백 적용</h4>
+            <p class="text-gray-600 text-sm">디자인 시안 제작 및 수정 반영</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4">
+              <span class="text-red-600 font-bold">4</span>
+            </div>
+            <h4 class="font-bold mb-2">최종 완료 및 다채널 최적화 배포</h4>
+            <p class="text-gray-600 text-sm">스토어, SNS, 광고용 다양한 포맷으로 제공</p>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg transition-colors">
+            디자인 제작 문의하기
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen py-20 bg-red-950 text-white">
+    <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+      <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 sm:p-12 shadow-2xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4 text-red-900">CONTACT</h2>
+          <p class="text-gray-600">정확한 전략 수립을 위해, 고객사의 소중한 정보가 필요합니다.</p>
+        </div>
+        <form id="contactForm" action="https://formsubmit.co/cd1plus@naver.com" method="POST" class="space-y-6">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="새로운 문의가 접수되었습니다">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://adcode.marketing/?thanks=true">
+          
+          <div>
+            <label for="company" class="block text-sm font-medium text-gray-700 mb-1">회사명</label>
+            <input 
+              type="text" 
+              id="company"
+              name="company" 
+              class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:ring-2 focus:ring-red-500 outline-none border border-gray-300 placeholder-gray-500 transition-all" 
+              placeholder="회사명을 입력해주세요" 
+              required
+            >
+          </div>
+          
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">성함</label>
+            <input 
+              type="text" 
+              id="name"
+              name="name" 
+              class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:ring-2 focus:ring-red-500 outline-none border border-gray-300 placeholder-gray-500 transition-all" 
+              placeholder="성함을 입력해주세요" 
+              required
+            >
+          </div>
+          
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일 주소</label>
+            <input 
+              type="email" 
+              id="email"
+              name="email" 
+              class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:ring-2 focus:ring-red-500 outline-none border border-gray-300 placeholder-gray-500 transition-all" 
+              placeholder="이메일 주소를 입력해주세요" 
+              required
+            >
+          </div>
+          
+          <div>
+            <label for="type" class="block text-sm font-medium text-gray-700 mb-1">진행을 희망하시는 광고 서비스를 선택해주세요</label>
+            <select 
+              id="type"
+              name="inquiry_type" 
+              class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:ring-2 focus:ring-red-500 outline-none border border-gray-300 placeholder-gray-500 transition-all text-gray-700" 
+              required
+            >
+              <option value="" class="text-gray-500">서비스를 선택해주세요</option>
+              <option value="통합 마케팅 서비스">1. 통합 마케팅 서비스</option>
+              <option value="카페-커뮤니티 바이럴 마케팅">2. 카페-커뮤니티 바이럴 마케팅</option>
+              <option value="당근 바이럴 마케팅">3. 당근 바이럴 마케팅</option>
+              <option value="인스타 바이럴 마케팅">4. 인스타 바이럴 마케팅</option>
+              <option value="가게(매장) 마케팅">5. 가게(매장) 마케팅</option>
+              <option value="퍼포먼스 마케팅">6. 퍼포먼스 마케팅(검색광고,디스플레이,META)</option>
+              <option value="디자인 대행">7. 디자인 대행</option>
+              <option value="기타">8. 기타</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">문의 내용을 입력해 주세요</label>
+            <textarea 
+              id="message"
+              name="message" 
+              class="w-full px-4 py-3 bg-gray-50 rounded-lg focus:ring-2 focus:ring-red-500 outline-none border border-gray-300 placeholder-gray-500 transition-all min-h-[150px]" 
+              placeholder="문의 내용을 상세히 입력해 주세요..." 
+              required
+            ></textarea>
+          </div>
+          
+          <div class="flex items-center space-x-3 bg-gray-100 p-4 rounded-lg">
+            <input 
+              type="checkbox" 
+              id="privacy" 
+              name="privacy_agreement"
+              class="w-5 h-5 accent-red-500 cursor-pointer"
+              required
+            >
+            <label for="privacy" class="text-gray-700 text-sm">개인정보 처리방침에 동의하며, 문의에 대한 연락을 받는 것에 동의합니다.</label>
+          </div>
+          
+          <button 
+            type="submit" 
+            class="w-full px-6 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-all duration-300 font-medium flex items-center justify-center space-x-2"
+          >
+            <span>문의하기</span>
+          </button>
+        </form>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-12 pt-12 border-t border-gray-200 max-w-3xl mx-auto">
+            <div class="p-8 text-center">
+              <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-red-900">이메일</h3>
+              <a href="mailto:cd1plus@naver.com" class="text-red-600 hover:text-red-700 transition-colors">
+                cd1plus@naver.com
+              </a>
+            </div>
+            <div class="p-8 text-center">
+              <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-red-900">주소</h3>
+              <address class="text-center text-gray-700 not-italic">
+                대구 남구 큰골길 90 1-3F 사옥
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#2a0505] text-white py-12">
+      <div class="container mx-auto px-2 sm:px-4 lg:px-8 max-w-full">
+        <div class="flex flex-col md:flex-row justify-center items-center md:items-start md:justify-around gap-8 mb-8">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold mb-2">ADCODEMARKETING</h3>
+            <p class="text-gray-400 mb-6">Setting new standards for viral and online marketing.</p>
+            <div class="flex justify-center md:justify-start space-x-4">
+              
+              <a href="https://www.instagram.com/adcode_marketing" class="w-10 h-10 bg-red-600/20 rounded-full flex items-center justify-center hover:bg-red-600/30">
+                <svg class="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              
+            </div>
+          </div>
+          
+         
+          
+          <div class="text-center md:text-left">
+            <h3 class="font-semibold mb-3">정보</h3>
+            <ul class="flex flex-col md:items-start space-y-2 text-gray-400">
+              <li><button onclick="openModal('terms')" class="hover:text-white transition-colors">이용약관</button></li>
+              <li><button onclick="openModal('privacy')" class="hover:text-white transition-colors">개인정보처리방침</button></li>
+              <li><button onclick="openModal('cookie')" class="hover:text-white transition-colors">쿠키 정책</button></li>
+              <li><a href="mailto:cd1plus@naver.com" class="hover:text-white transition-colors">이메일: cd1plus@naver.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
+          <p>&copy; 2025 Adcode Marketing. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Scroll Button -->
+    <a href="#hero" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-80 hover:opacity-100 transition-opacity z-[1000]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </a>
+    
+    <!-- Simple Script -->
+    <script>
+      // Change navigation bar style on scroll
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('.header');
+        
+        if (window.scrollY > 50) {
+          header.classList.add('header-scrolled');
+        } else {
+          header.classList.remove('header-scrolled');
+        }
+      });
+      
+      // Mobile Menu Toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when links are clicked
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    </script>
+
+    <!-- Modal Containers -->
+    <div id="terms-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+      <div class="bg-white rounded-xl max-w-2xl mx-4 p-6 max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-900">이용약관</h3>
+          <button onclick="closeModal('terms')" class="text-gray-500 hover:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="prose prose-sm text-gray-600">
+          <h4 class="font-bold mb-2">제1조 (목적)</h4>
+          <p class="mb-4">이 약관은 애드코드마케팅(이하 "회사")이 제공하는 서비스의 이용 조건 및 절차, 그리고 회사와 이용자 간의 권리, 의무 및 책임 사항을 규정하는 것을 목적으로 합니다.</p>
+          
+          <h4 class="font-bold mb-2">제2조 (용어의 정의)</h4>
+          <p class="mb-4">이 약관에서 사용하는 주요 용어의 정의는 다음과 같습니다.</p>
+          <ul class="list-disc pl-5 mb-4">
+            <li>"서비스"란 회사가 제공하는 모든 광고대행, 바이럴마케팅, 검색광고(SA), 디스플레이광고(DA), 소셜미디어 관리 및 기타 관련 마케팅 서비스를 의미합니다.</li>
+            <li>"이용자"란 회사의 서비스를 이용하는 개인, 법인 또는 단체를 의미합니다.</li>
+          </ul>
+          
+          <h4 class="font-bold mb-2">제3조 (약관의 효력 및 변경)</h4>
+          <p>이 약관은 회사의 서비스를 이용하고자 하는 모든 이용자에게 적용되며, 회사는 필요한 경우 관련 법령을 위반하지 않는 범위 내에서 약관을 변경할 수 있습니다. 변경된 약관은 회사 웹사이트 또는 서비스 화면을 통해 공지하며, 별도의 동의 절차 없이 공지 후 효력이 발생합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="privacy-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+      <div class="bg-white rounded-xl max-w-2xl mx-4 p-6 max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-900">개인정보처리방침</h3>
+          <button onclick="closeModal('privacy')" class="text-gray-500 hover:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="prose prose-sm text-gray-600">
+          <h4 class="font-bold mb-2">1. 개인정보 수집 및 이용 목적</h4>
+          <p class="mb-4">애드코드마케팅(이하 "회사")은 다음의 목적을 위해 개인정보를 처리합니다.
+          수집된 개인정보는 아래 명시한 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경될 경우 「개인정보 보호법」 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 취할 것입니다.</p>
+          
+          <h4 class="font-bold mb-2">2. 개인정보의 처리 및 보유 기간</h4>
+          <p class="mb-4">회사는 법령에 따른 개인정보 보유·이용 기간 또는 정보주체로부터 수집 시 동의받은 기간 내에서 개인정보를 처리 및 보유합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="cookie-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+      <div class="bg-white rounded-xl max-w-2xl mx-4 p-6 max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-900">쿠키 정책</h3>
+          <button onclick="closeModal('cookie')" class="text-gray-500 hover:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="prose prose-sm text-gray-600">
+          <h4 class="font-bold mb-2">1. 쿠키 사용 목적</h4>
+          <p class="mb-4">애드코드마케팅(이하 "회사")은 사용자 편의를 위해 웹사이트 방문 기록을 저장하며, 다음과 같은 목적으로 쿠키를 사용합니다.</p>
+          <ul class="list-disc pl-5 mb-4">
+            <li>고객 접속 빈도 및 방문 시간 분석</li>
+            <li>이용자의 관심 분야 및 선호도 파악</li>
+            <li>다양한 이벤트 참여 및 방문 횟수 파악</li>
+          </ul>
+          
+          <h4 class="font-bold mb-2">2. 쿠키 설치·운영 및 거부 방법</h4>
+          <p>이용자는 쿠키 설치에 대한 선택권을 가지고 있습니다.
+          웹 브라우저 설정을 통해 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인하거나, 모든 쿠키를 거부할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script for Modal Control -->
+    <script>
+      function openModal(id) {
+        document.getElementById(`${id}-modal`).classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModal(id) {
+        document.getElementById(`${id}-modal`).classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Close modal with ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+            modal.classList.add('hidden');
+          });
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Close modal when clicking outside
+      document.querySelectorAll('[id$="-modal"]').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+          }
+        });
+      });
+    </script>
+
+    <!-- Thank You Modal -->
+    <div id="thank-you-modal" class="fixed inset-0 bg-black/70 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 shadow-2xl">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 text-green-500">
+            <svg class="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">감사합니다!</h3>
+          <p class="text-gray-600 mb-6">문의가 성공적으로 제출되었습니다. 24시간 이내에 답변을 드리겠습니다.</p>
+          <button id="close-modal-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+            닫기
+          </button>
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      
+      function hapticFeedback() {
+        if (navigator.vibrate) {
+          navigator.vibrate(10);
+        }
+      }
+      
+      
+      function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      }
+      
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        const header = document.querySelector('.header');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        
+        
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            header.classList.add('header-scrolled');
+          } else {
+            header.classList.remove('header-scrolled');
+          }
+        });
+        
+        
+        if (mobileMenuButton) {
+          mobileMenuButton.addEventListener('click', () => {
+            hapticFeedback();
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+        
+        
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+          link.addEventListener('click', () => {
+            hapticFeedback();
+            mobileMenu.classList.add('hidden');
+          });
+        });
+        
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('thanks') === 'true') {
+          const modal = document.getElementById('thank-you-modal');
+          if (modal) {
+            modal.classList.remove('hidden');
+          }
+          
+          
+          const newUrl = window.location.pathname;
+          window.history.replaceState({}, document.title, newUrl);
+        }
+        
+        
+        if (closeModalBtn) {
+          closeModalBtn.addEventListener('click', () => {
+            document.getElementById('thank-you-modal').classList.add('hidden');
+            hapticFeedback();
+          });
+        }
+        
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            hapticFeedback();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, 
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+        
+        // 카드 높이 균일화 함수
+        function equalizeCardHeights() {
+          if (window.innerWidth <= 768) {
+            // 카드 높이 초기화
+            document.querySelectorAll('.mobile-card').forEach(card => {
+              card.style.height = 'auto';
+            });
+            
+            // 각 섹션별로 카드 높이 계산
+            const sections = ['#it', '#ecommerce', '#kbrand', '#kgoods'];
+            sections.forEach(sectionId => {
+              const cards = document.querySelectorAll(`${sectionId} .mobile-card`);
+              if (cards && cards.length) {
+                let maxHeight = 0;
+                cards.forEach(card => {
+                  const height = card.offsetHeight;
+                  maxHeight = Math.max(maxHeight, height);
+                });
+                
+                if (maxHeight > 0) {
+                  cards.forEach(card => {
+                    card.style.height = `${maxHeight}px`;
+                  });
+                }
+              }
+            });
+          }
+        }
+        
+        
+        function setupLazyLoading() {
+          if ('loading' in HTMLImageElement.prototype) {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+              if (img.dataset.src) {
+                img.src = img.dataset.src;
+              }
+            });
+          } else {
+            
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+            document.body.appendChild(script);
+          }
+        }
+        
+        
+        window.addEventListener('load', () => {
+          equalizeCardHeights();
+          setupLazyLoading();
+        });
+        
+       
+        window.addEventListener('resize', debounce(equalizeCardHeights, 200));       
+        
+        window.addEventListener('scroll', debounce(() => {          
+        }, 100));
+      });
+      
+     
+      function downloadCompanyProfile(event) {
+        event.preventDefault();
+        
+        
+        if (navigator.vibrate) {
+          navigator.vibrate(10);
+        }
+        
+        
+        console.log("Attempting to download:", COMPANY_PROFILE_PATH);
+        
+        const link = document.createElement('a');
+        link.href = COMPANY_PROFILE_PATH;
+        link.download = 'Summit_Exports_LTD_Introduction.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    </script>
+  </div>
+</body>
+</html>
+
